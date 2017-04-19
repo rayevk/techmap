@@ -7,6 +7,7 @@ const Wrapper = styled.a`
   pointer-events: none;
 
   ${media.large`
+    display: inline-block;
     pointer-events: auto;
     position: absolute;
     z-index: 1;
