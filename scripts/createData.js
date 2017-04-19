@@ -25,7 +25,6 @@ function transform() {
       const jsonObj = JSON.parse(chunk.toString());
       const dataStr = JSON.stringify({
         id: kebabCase(jsonObj['Company']),
-        idx: rowIndex + 1,
         name: jsonObj['Company'],
         industry: jsonObj['Industry'],
         station: jsonObj['Tube'],
