@@ -7,7 +7,12 @@ class Store extends PureComponent {
     super(props);
     this.state = {
       loading: true,
-      companies: []
+      companies: [],
+      markersFilter: {
+        key: 'all',
+        value: null
+      },
+      set: this._set
     };
   }
 
@@ -31,6 +36,10 @@ class Store extends PureComponent {
         globalStore: this.state,
       });
     });
+  }
+
+  _set = partialState => {
+    this.setState(partialState);
   }
 
   render() {
