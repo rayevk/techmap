@@ -1,7 +1,6 @@
-import React, { PureComponent } from 'react';
+import React, { PropTypes, PureComponent } from 'react';
 
-import CONFIG from '../../config';
-
+import { getThemeColor } from '../../utils';
 import Content from './content';
 import PaneHeader from '../pane-header';
 import Tag from '../tag';
@@ -12,7 +11,7 @@ class CompanyDetails extends PureComponent {
     const { companies } = this.props.globalStore;
     const id = this.props.params.company;
     const company = companies.find(company => company.name === decodeURIComponent(id)) || {};
-    const industry = CONFIG.industries.find(industry => industry.name === company.industry);
+    const themeColor = getThemeColor(company.industry);
 
     return (
       <div>
@@ -47,7 +46,7 @@ class CompanyDetails extends PureComponent {
                   d="M4.36 12.89C5.73 15.37 6.5 18 6.5 18s.86-2.373 2.33-5.11C10.095 10.54 12 7.9 12 6.5 12 3.46 9.538 1 6.5 1S1 3.462 1 6.5c0 1.523 1.98 3.887 3.36 6.39z"
                   stroke="#000"
                   strokeWidth=".5"
-                  fill={industry.color}
+                  fill={themeColor}
                 />
               </svg>
               <adress>{company.adress}</adress>
@@ -66,5 +65,9 @@ class CompanyDetails extends PureComponent {
     );
   }
 }
+
+CompanyDetails.propTypes = {
+  globalStore: PropTypes.object
+};
 
 export default CompanyDetails;

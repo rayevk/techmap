@@ -1,87 +1,87 @@
 export default {
-  industries: [
+  themes: [
     {
-      name: 'Accelerator/Incubator',
+      industry: 'Accelerator/Incubator',
       color: '#a6bded'
     },
     {
-      name: 'AdTech',
+      industry: 'AdTech',
       color: '#efbe16'
     },
     {
-      name: 'AI',
+      industry: 'AI',
       color: '#3a77d8'
     },
     {
-      name: 'Data Analytics & Automation Tools',
+      industry: 'Data Analytics & Automation Tools',
       color: '#7e61a4'
     },
     {
-      name: 'Dating Platforms',
+      industry: 'Dating Platforms',
       color: '#cc0000'
     },
     {
-      name: 'eCommerce',
+      industry: 'eCommerce',
       color: '#b7c600'
     },
     {
-      name: 'EduTech',
+      industry: 'EduTech',
       color: '#4b00d8'
     },
     {
-      name: 'FinTech',
+      industry: 'FinTech',
       color: '#001f7e'
     },
     {
-      name: 'Gaming & Betting',
+      industry: 'Gaming & Betting',
       color: '#7192b5'
     },
     {
-      name: 'HRTech',
+      industry: 'HRTech',
       color: '#684173'
     },
     {
-      name: 'InsurTech',
+      industry: 'InsurTech',
       color: '#d5a6bd'
     },
     {
-      name: 'Logistics, Delivery & On-Demand Services',
+      industry: 'Logistics, Delivery & On-Demand Services',
       color: '#008e87'
     },
     {
-      name: 'MarTech',
+      industry: 'MarTech',
       color: '#2fcac0'
     },
     {
-      name: 'MedTech',
+      industry: 'MedTech',
       color: '#eb1564'
     },
     {
-      name: 'Music & Media',
+      industry: 'Music & Media',
       color: '#6cb961'
     },
     {
-      name: 'Other',
+      industry: 'Other',
       color: '#cccccc'
     },
     {
-      name: 'Real Estate',
+      industry: 'Real Estate',
       color: '#00a099'
     },
     {
-      name: 'Retail',
+      industry: 'Retail',
       color: '#f5d76d'
     },
     {
-      name: 'Security',
+      industry: 'Security',
       color: '#848484'
     },
     {
-      name: 'Software & Developer Tools',
+      industry: 'Software & Developer Tools',
       color: '#22a7f0'
     },
     {
-      name: 'Travel & Leisure',
+      industry: 'Travel & Leisure',
       color: '#ff6200'
     }
   ]

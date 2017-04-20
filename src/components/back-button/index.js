@@ -1,36 +1,40 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import styled from 'styled-components';
 import { Link, browserHistory } from 'react-router';
 
 import Icon from '../Icon';
 
-const Button = styled.button`
-  cursor: pointer;
+
+const StyledButton = styled.button`
   background-color: transparent;
   border: 0;
+  cursor: pointer;
+  display: flex;
   outline: 0;
   padding: 0;
 `
-
-const LinkButton = styled(Link)`
-  color: tomato;
-  border-color: tomato;
+const StyledLink = styled(Link)`
+  display: flex;
 `;
 
 const BackButton = ({ to }) => {
   if (to) {
     return (
-      <LinkButton to={to}>
+      <StyledLink to={to} aria-label="Back">
         <Icon name="arrowBack" width="16" height="16" />
-      </LinkButton>
+      </StyledLink>
     )
   }
 
   return (
-    <Button onClick={browserHistory.goBack} type="button" role="button" aria-label="Back">
+    <StyledButton onClick={browserHistory.goBack} type="button" role="button" aria-label="Back">
       <Icon name="arrowBack" width="16" height="16" />
-    </Button>
+    </StyledButton>
   );
+};
+
+BackButton.PropTypes = {
+  to: PropTypes.string
 };
 
 export default BackButton;
