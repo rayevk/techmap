@@ -1,6 +1,4 @@
 import React, { PropTypes } from 'react';
-import styled from 'styled-components';
-
 import PaneHeader from '../pane-header';
 import CompanyItem from './company-item';
 

@@ -1,7 +1,6 @@
 import { injectGlobal } from 'styled-components';
 
-// Global styles
-injectGlobal`
+const globalStyles = injectGlobal`
   html,
   body {
     height: 100%;
@@ -34,3 +33,5 @@ injectGlobal`
     vertical-align: text-bottom;
   }
 `;
+
+export default globalStyles;

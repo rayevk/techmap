@@ -76,7 +76,7 @@ class Map extends PureComponent {
 
       // e.target.style.fill = 'hotpink';
       browserHistory.push(`/london/station/${encodeURIComponent(station)}`);
-    }.bind(this));
+    });
   }
 
   render() {
