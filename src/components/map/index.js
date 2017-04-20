@@ -126,6 +126,7 @@ function markerFilters(key, value) {
   const filters = {
     industry: marker => marker.industries.includes(value),
     company: marker => marker.companies.includes(value),
+    station: marker => marker.station === value,
     all: marker => marker
   }
   return filters[key];
