@@ -1,7 +1,7 @@
 import React, { PureComponent, PropTypes } from 'react';
 import { browserHistory } from 'react-router';
 import groupBy from 'lodash.groupby';
-import { uniq } from '../../utils';
+import { uniq, getThemeColor } from '../../utils';
 
 import LoadingIndicator from '../LoadingIndicator';
 import Wrapper from './Wrapper';
@@ -71,12 +71,24 @@ class Map extends PureComponent {
     });
 
     this.markers = markers;
-
-    // this.filterMarkers(this.props.globalStore.markersFilter);
   }
 
   filterMarkers({ key = 'all', value = '' } = {}) {
     const visibleMarkers = this.markers.filter(markerFilters(key, value));
+    const themeColor = {
+      fill: '#f75850',
+      stroke: '#b3382c'
+    };
+
+    if (key === 'industry') {
+      themeColor.fill = getThemeColor(value);
+      themeColor.stroke = 'black';
+    }
+
+    if (key === 'company') {
+      themeColor.fill = getThemeColor(this.props.globalStore.companies.find(company => company.name === value).industry);
+      themeColor.stroke = 'black';
+    }
 
     this.markers.forEach(marker => {
       if (!visibleMarkers.includes(marker)) {
@@ -84,8 +96,8 @@ class Map extends PureComponent {
       }
       else {
         marker.el.style.display = 'block';
-        // marker.el.style.fill = 'hotpink';
-        // marker.el.style.stroke = 'black';
+        marker.el.style.fill = themeColor.fill;
+        marker.el.style.stroke = themeColor.stroke;
       }
     });
   }
