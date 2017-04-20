@@ -1,6 +1,10 @@
 {
   "name": "techmap",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/honeypotio/techmap/"
+  },
   "config": {
     "distPath": "build"
   },
