@@ -1,6 +1,7 @@
-import React, { PropTypes } from 'react';
-import styled from 'styled-components';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router';
+import styled from 'styled-components';
 
 
 const StyledLink = styled(Link)`

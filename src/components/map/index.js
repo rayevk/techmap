@@ -1,5 +1,7 @@
-import React, { PureComponent, PropTypes } from 'react';
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import { browserHistory } from 'react-router';
+
 import groupBy from 'lodash.groupby';
 import { uniq, getThemeColor } from '../../utils';
 
