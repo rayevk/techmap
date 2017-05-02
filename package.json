@@ -6,17 +6,29 @@
     "url": "https://github.com/honeypotio/techmap/"
   },
   "config": {
-    "distPath": "build"
+    "distPath": "build",
+    "prettier": "--single-quote"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "deploy": "npm run build && gh-pages -d $npm_package_config_distPath"
+    "deploy": "npm run build && gh-pages -d $npm_package_config_distPath",
+    "format": "prettier $npm_package_config_prettier --write '{src,public}/**/*.js'",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier $npm_package_config_prettier --write",
+      "git add"
+    ]
   },
   "devDependencies": {
     "csvtojson": "^1.1.4",
     "gh-pages": "^0.12.0",
+    "husky": "^0.13.3",
+    "lint-staged": "^3.4.1",
+    "prettier": "^1.2.2",
     "react-scripts": "0.9.5"
   },
   "dependencies": {
