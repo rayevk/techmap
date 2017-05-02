@@ -9,8 +9,8 @@ import Pane from '../../components/pane';
 const London = props => (
   <Viewport>
     <Helmet title="London Tech Map" />
-    <Store src="/data/london.json">
-      <Map svgurl="/assets/maps/london.svg" />
+    <Store src={`${process.env.PUBLIC_URL}/data/london.json`}>
+      <Map svgurl={`${process.env.PUBLIC_URL}/assets/maps/london.svg`} />
       <Pane>{props.children}</Pane>
     </Store>
   </Viewport>
