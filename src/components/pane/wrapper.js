@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { media } from '../../styles/utils';
 
-const Wrapper = styled.div `
+const Wrapper = styled.div`
   background-color: white;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   border-top: 1px solid #e2e8f0;

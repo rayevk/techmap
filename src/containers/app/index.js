@@ -13,11 +13,11 @@ import Helmet from 'react-helmet';
 // TODO
 // import Toolbar from '../../components/Toolbar';
 
-const App = (props) => (
-  <div style={{height: '100%'}}>
+const App = props => (
+  <div style={{ height: '100%' }}>
     <Helmet
-      titleTemplate='%s - Honeypot'
-      defaultTitle='Honeypot - The Developer-Focused Job Platform'
+      titleTemplate="%s - Honeypot"
+      defaultTitle="Honeypot - The Developer-Focused Job Platform"
       meta={[
         {
           name: 'description',

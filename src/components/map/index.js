@@ -10,7 +10,6 @@ import Wrapper from './Wrapper';
 import Watermark from './Watermark';
 import PanZoom from './pan-zoom';
 
-
 class Map extends PureComponent {
   constructor(props) {
     super(props);
@@ -23,19 +22,21 @@ class Map extends PureComponent {
 
   componentDidMount() {
     fetch(this.props.svgurl)
-    .then(res => res.text())
-    .then(svg => {
-      this.setState({
-        loading: false,
-        svg: svg
+      .then(res => res.text())
+      .then(svg => {
+        this.setState({
+          loading: false,
+          svg: svg
+        });
+        this.initPanZoom();
+        this.bindMarkers();
+        this.initMarkers();
+      })
+      .catch(err => {
+        console.log(
+          `There has been a problem with a fetch operation: ${err.message}`
+        );
       });
-      this.initPanZoom();
-      this.bindMarkers();
-      this.initMarkers();
-    })
-    .catch(err => {
-      console.log(`There has been a problem with a fetch operation: ${err.message}`);
-    });
   }
 
   componentDidUpdate() {
@@ -53,17 +54,24 @@ class Map extends PureComponent {
   initMarkers() {
     const { companies } = this.props.globalStore;
     const companiesByStation = groupBy(companies, 'station');
-    const stations = uniq(companies.map(company => company.station))
-      .filter(station => station !== '');
+    const stations = uniq(companies.map(company => company.station)).filter(
+      station => station !== ''
+    );
 
-    const scale = (n) => ((n / 40) + 0.7);
+    const scale = n => n / 40 + 0.7;
     const markers = [...this.wrapper.querySelectorAll('[data-station]')]
       .filter(el => stations.includes(el.dataset.station))
       .map(el => ({
         el: el,
         station: el.dataset.station,
-        industries: uniq(companiesByStation[el.dataset.station].map(company => company.industry)),
-        companies: companiesByStation[el.dataset.station].map(company => company.name),
+        industries: uniq(
+          companiesByStation[el.dataset.station].map(
+            company => company.industry
+          )
+        ),
+        companies: companiesByStation[el.dataset.station].map(
+          company => company.name
+        ),
         companiesTotal: companiesByStation[el.dataset.station].length
       }));
 
@@ -88,15 +96,17 @@ class Map extends PureComponent {
     }
 
     if (key === 'company') {
-      themeColor.fill = getThemeColor(this.props.globalStore.companies.find(company => company.name === value).industry);
+      themeColor.fill = getThemeColor(
+        this.props.globalStore.companies.find(company => company.name === value)
+          .industry
+      );
       themeColor.stroke = 'black';
     }
 
     this.markers.forEach(marker => {
       if (!visibleMarkers.includes(marker)) {
         marker.el.style.opacity = 0.6;
-      }
-      else {
+      } else {
         marker.el.style.display = 'block';
         marker.el.style.opacity = 1;
         marker.el.style.fill = themeColor.fill;
@@ -117,15 +127,14 @@ class Map extends PureComponent {
   render() {
     const { loading, svg, grabbing } = this.state;
     return (
-      <div style={{height: '100%'}}>
-        {loading ?
-          <LoadingIndicator /> :
-          <Wrapper
-            innerRef={comp => this.wrapper = comp}
-            dangerouslySetInnerHTML={{__html: svg}}
-            grabbing={grabbing}
-          />
-        }
+      <div style={{ height: '100%' }}>
+        {loading
+          ? <LoadingIndicator />
+          : <Wrapper
+              innerRef={comp => (this.wrapper = comp)}
+              dangerouslySetInnerHTML={{ __html: svg }}
+              grabbing={grabbing}
+            />}
         <Watermark aria-hidden="true" />
       </div>
     );
@@ -143,7 +152,7 @@ function markerFilters(key, value) {
     company: marker => marker.companies.includes(value),
     station: marker => marker.station === value,
     all: marker => marker
-  }
+  };
   return filters[key];
 }
 

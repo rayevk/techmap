@@ -1,2 +1,2 @@
-self.ASSETS=[];
-self.ENV='production';
+self.ASSETS = [];
+self.ENV = 'production';

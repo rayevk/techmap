@@ -5,7 +5,6 @@ import { Link, browserHistory } from 'react-router';
 
 import Icon from '../Icon';
 
-
 const StyledButton = styled.button`
   background-color: transparent;
   border: 0;
@@ -13,7 +12,7 @@ const StyledButton = styled.button`
   display: flex;
   outline: 0;
   padding: 0;
-`
+`;
 const StyledLink = styled(Link)`
   display: flex;
 `;
@@ -24,11 +23,16 @@ const BackButton = ({ to }) => {
       <StyledLink to={to} aria-label="Back">
         <Icon name="arrowBack" width="16" height="16" />
       </StyledLink>
-    )
+    );
   }
 
   return (
-    <StyledButton onClick={browserHistory.goBack} type="button" role="button" aria-label="Back">
+    <StyledButton
+      onClick={browserHistory.goBack}
+      type="button"
+      role="button"
+      aria-label="Back"
+    >
       <Icon name="arrowBack" width="16" height="16" />
     </StyledButton>
   );

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-  cursor: ${props => props.grabbing ? 'move' : 'default'};
+  cursor: ${props => (props.grabbing ? 'move' : 'default')};
 
   /* TODO: perf => pointer-events: none; */
   user-select: none;

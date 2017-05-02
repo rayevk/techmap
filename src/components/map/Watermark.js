@@ -16,6 +16,7 @@ const Wrapper = styled.a`
   `}
 `;
 
+// prettier-ignore
 const Watermark = () => {
   return (
     <Wrapper href="https://www.honeypot.io" target="_blank">

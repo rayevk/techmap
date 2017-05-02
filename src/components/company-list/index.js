@@ -12,9 +12,14 @@ class CompanyList extends Component {
     const paneTitle = Object.values(filters)[0];
     const companyItems = companies
       .filter(company => applyFilters(company, filters))
-      .map((company, idx) =>
-        <CompanyItem to={`/london/company/${encodeURIComponent(company.name)}`} key={idx}>{company.name}</CompanyItem>
-      );
+      .map((company, idx) => (
+        <CompanyItem
+          to={`/london/company/${encodeURIComponent(company.name)}`}
+          key={idx}
+        >
+          {company.name}
+        </CompanyItem>
+      ));
 
     return (
       <div>

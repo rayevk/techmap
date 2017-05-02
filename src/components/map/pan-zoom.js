@@ -39,7 +39,8 @@ class PanZoom {
     const boundingRect = this._target.getBoundingClientRect();
     let delta = e.deltaY;
 
-    if (e.deltaMode === 1) { // 1 is "lines", 0 is "pixels"
+    if (e.deltaMode === 1) {
+      // 1 is "lines", 0 is "pixels"
       // Firefox uses "lines" when mouse is connected
       delta *= 15;
     }
@@ -47,7 +48,7 @@ class PanZoom {
     // stop mouse wheel producing huge values
     delta = Math.max(Math.min(delta, 60), -60);
 
-    const scaleDiff = (delta / 300) + 1;
+    const scaleDiff = delta / 300 + 1;
 
     // avoid to-small values
     if (this._scale * scaleDiff < 0.05) return;
@@ -56,12 +57,13 @@ class PanZoom {
     if (
       (this._scale >= 3 && scaleDiff > 1) ||
       (this._scale <= 1 && scaleDiff < 1)
-    ) return;
+    )
+      return;
 
     this._scale *= scaleDiff;
     this._dx -= (e.pageX - boundingRect.left) * (scaleDiff - 1);
     this._dy -= (e.pageY - boundingRect.top) * (scaleDiff - 1);
-  }
+  };
 
   _onFirstPointerDown(e) {
     document.addEventListener('mousemove', this._onPointerMove);
@@ -80,7 +82,7 @@ class PanZoom {
     if (this._active === 1) {
       this._onFirstPointerDown(e);
     }
-  }
+  };
 
   _onPointerMove = e => {
     e.preventDefault();
@@ -93,17 +95,16 @@ class PanZoom {
     this._dy += averagePoint.y - averageLastPoint.y;
 
     if (points[1]) {
-      const scaleDiff = touchDistance(
-        points[0], points[1]) / touchDistance(this._lastPoints[0],
-        this._lastPoints[1]
-      );
+      const scaleDiff =
+        touchDistance(points[0], points[1]) /
+        touchDistance(this._lastPoints[0], this._lastPoints[1]);
       this._scale *= scaleDiff;
       this._dx -= (averagePoint.x - boundingRect.left) * (scaleDiff - 1);
       this._dy -= (averagePoint.y - boundingRect.top) * (scaleDiff - 1);
     }
 
     this._lastPoints = points;
-  }
+  };
 
   _update = () => {
     requestAnimationFrame(this._update);
@@ -115,7 +116,7 @@ class PanZoom {
       translate(${this._dx}px, ${this._dy}px)
       scale(${this._scale})
     `;
-  }
+  };
 
   _onPointerUp = e => {
     e.preventDefault();
@@ -131,7 +132,7 @@ class PanZoom {
     document.removeEventListener('mouseup', this._onPointerUp);
     document.removeEventListener('touchmove', this._onPointerMove);
     document.removeEventListener('touchend', this._onPointerUp);
-  }
+  };
 }
 
 function getXY(obj) {
@@ -144,7 +145,7 @@ function getXY(obj) {
 function touchDistance(touch1, touch2) {
   const dx = Math.abs(touch2.x - touch1.x);
   const dy = Math.abs(touch2.y - touch1.y);
-  return Math.sqrt(dx*dx + dy*dy);
+  return Math.sqrt(dx * dx + dy * dy);
 }
 
 function getMidpoint(point1, point2) {
@@ -157,8 +158,7 @@ function getMidpoint(point1, point2) {
 function getPoints(e) {
   if (e.touches) {
     return [...e.touches].map(getXY);
-  }
-  else {
+  } else {
     return [getXY(e)];
   }
 }

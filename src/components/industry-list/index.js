@@ -7,7 +7,6 @@ import { getThemeColor } from '../../utils';
 import PaneHeader from '../pane-header';
 import IndustryItem from './industry-item';
 
-
 const IndustryList = props => {
   const { companies } = props.globalStore;
   const industries = groupBy(companies, 'industry');

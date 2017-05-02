@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-
 const Tag = styled.span`
   border: 1px solid #3685d6;
   border-radius: 16px;

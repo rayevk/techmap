@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 import LoadingIndicator from '../LoadingIndicator';
 
-
 class Store extends PureComponent {
   constructor(props) {
     super(props);
@@ -20,34 +19,36 @@ class Store extends PureComponent {
 
   componentDidMount() {
     fetch(this.props.src)
-    .then(res => res.json())
-    .then(json => {
-      this.setState({
-        loading: false,
-        companies: json
+      .then(res => res.json())
+      .then(json => {
+        this.setState({
+          loading: false,
+          companies: json
+        });
+      })
+      .catch(err => {
+        console.log(
+          `There has been a problem with a fetch operation: ${err.message}`
+        );
       });
-    })
-    .catch(err => {
-      console.log(`There has been a problem with a fetch operation: ${err.message}`);
-    });
   }
 
   renderChildren() {
     return React.Children.map(this.props.children, child => {
       return React.cloneElement(child, {
-        globalStore: this.state,
+        globalStore: this.state
       });
     });
   }
 
   _set = partialState => {
     this.setState(partialState);
-  }
+  };
 
   render() {
     const { loading } = this.state;
     return (
-      <div style={{height: '100%'}}>
+      <div style={{ height: '100%' }}>
         {loading ? <LoadingIndicator /> : this.renderChildren()}
       </div>
     );

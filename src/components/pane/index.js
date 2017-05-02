@@ -27,9 +27,12 @@ class Pane extends Component {
       value: Object.values(filters)[0] || null
     };
 
-    if (JSON.stringify(this.state.markersFilter) === JSON.stringify(markersFilter)) return;
+    if (
+      JSON.stringify(this.state.markersFilter) === JSON.stringify(markersFilter)
+    )
+      return;
 
-    this.setState({ markersFilter })
+    this.setState({ markersFilter });
     nextProps.globalStore.set({ markersFilter });
 
     // Reset scroll position.
@@ -38,7 +41,11 @@ class Pane extends Component {
 
   render() {
     return (
-      <Wrapper innerRef={comp => { this.wrapper = comp }}>
+      <Wrapper
+        innerRef={comp => {
+          this.wrapper = comp;
+        }}
+      >
         <Content>{this.renderChildren()}</Content>
       </Wrapper>
     );

@@ -10,11 +10,11 @@ import BackButton from '../back-button';
 const PaneHeader = ({ title, meta, backButton, backTo }) => (
   <Wrapper>
     <Action left>
-      { backButton && <BackButton to={backTo} /> }
+      {backButton && <BackButton to={backTo} />}
     </Action>
     <div>
       <Title>{title}</Title>
-      { meta && <Meta>{meta}</Meta> }
+      {meta && <Meta>{meta}</Meta>}
     </div>
   </Wrapper>
 );

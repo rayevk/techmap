@@ -19,17 +19,19 @@ class MainMenu extends Component {
     this.wrapper.addEventListener('transitionend', this.onTransitionEnd);
   }
 
-  onTransitionEnd= e => {
+  onTransitionEnd = e => {
     this.setState({ animatable: false });
     this.wrapper.removeEventListener('transitionend', this.onTransitionEnd);
-  }
+  };
 
   render() {
     return (
       <Wrapper
         animatable={this.state.animatable}
         visible={this.state.visible}
-        innerRef={comp => { this.wrapper = comp }}
+        innerRef={comp => {
+          this.wrapper = comp;
+        }}
       >
         <Overlay />
         <Menu>

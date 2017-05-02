@@ -1,7 +1,7 @@
 import CONFIG from './config';
 
 function uniq(a) {
-   return Array.from(new Set(a));
+  return Array.from(new Set(a));
 }
 
 function applyFilters(obj, filters) {
@@ -13,12 +13,10 @@ function applyFilters(obj, filters) {
 }
 
 function getThemeColor(industry) {
-  const theme = CONFIG.themes.find(theme => theme.industry === industry) || { color: '#e2e8f0' };
+  const theme = CONFIG.themes.find(theme => theme.industry === industry) || {
+    color: '#e2e8f0'
+  };
   return theme.color;
 }
 
-export {
-  uniq,
-  applyFilters,
-  getThemeColor
-};
+export { uniq, applyFilters, getThemeColor };

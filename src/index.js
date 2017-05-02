@@ -15,9 +15,6 @@ const rootRoute = {
 };
 
 ReactDOM.render(
-  <Router
-    history={browserHistory}
-    routes={rootRoute}
-  />,
+  <Router history={browserHistory} routes={rootRoute} />,
   document.getElementById('root')
 );
