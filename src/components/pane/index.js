@@ -29,6 +29,9 @@ class Pane extends Component {
 
     this.setState({ markersFilter })
     nextProps.globalStore.set({ markersFilter });
+
+    // Reset scroll position.
+    this.wrapper.scrollTop = 0;
   }
 
   render() {
