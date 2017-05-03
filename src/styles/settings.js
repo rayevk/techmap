@@ -1,7 +1,7 @@
-const settings = {
-  toolbar: {
-    height: '48px'
-  }
+const breakpoints = {
+  small: 376,
+  medium: 768,
+  large: 992
 };
 
-export default settings;
+export { breakpoints };
