@@ -16,12 +16,20 @@ import Helmet from 'react-helmet';
 const App = props => (
   <div style={{ height: '100%' }}>
     <Helmet
-      titleTemplate="%s - Honeypot"
-      defaultTitle="Honeypot - The Developer-Focused Job Platform"
+      titleTemplate="Honeypot’s %s Tech Map"
+      defaultTitle="Honeypot’s Tech Maps"
       meta={[
         {
           name: 'description',
-          content: 'Honeypot is a Developer-Focused Job Platform. Companies apply to you with salary and tech stack upfront.'
+          content: 'Honeypot’s Tech Maps'
+        },
+        {
+          name: 'twitter:card',
+          content: 'summary'
+        },
+        {
+          name: 'twitter:site',
+          content: '@honeypotio'
         }
       ]}
     />
