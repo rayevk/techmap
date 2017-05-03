@@ -1,4 +1,6 @@
 # Tech Map
+[![Build Status](https://travis-ci.org/honeypotio/techmap.svg?branch=master)](https://travis-ci.org/honeypotio/techmap)
+[![Dependencies Status](https://david-dm.org/honeypotio/techmap/status.svg)](https://david-dm.org/honeypotio/techmap)
 
 > _soon_
 
