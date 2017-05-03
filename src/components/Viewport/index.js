@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import settings from '../../styles/settings';
 
 const Viewport = styled.div`
   background-color: #fbfbfb;
