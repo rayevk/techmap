@@ -17,7 +17,7 @@ const App = props => (
   <div style={{ height: '100%' }}>
     <Helmet
       titleTemplate="Honeypot’s %s Tech Map"
-      defaultTitle="Honeypot’s Tech Maps"
+      defaultTitle="Honeypot’s Tech Map"
       meta={[
         {
           name: 'description',
