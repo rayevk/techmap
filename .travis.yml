@@ -10,4 +10,4 @@ script:
 after_success:
   - git config --global user.email "travis-ci@localhost"
   - git config --global user.name "Travis-CI"
-  - npm run --silent deploy -- --silent --repo https://$GITHUB_TOKEN@github.com/$TRAVIS_REPO_SLUG.git
+  - npm run --silent deploy -- --silent --repo https://$GITHUB_TOKEN@github.com/$TRAVIS_REPO_SLUG.git --tag $TRAVIS_BUILD_NUMBER
