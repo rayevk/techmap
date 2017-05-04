@@ -7,4 +7,7 @@ cache:
 script:
   - npm test
   - npm run build
-  - npm run deploy -- --repo https://$GITHUB_TOKEN@github.com/honeypotio/techmap.git
+after_success:
+  - git config --global user.email "travis-ci@localhost"
+  - git config --global user.name "Travis-CI"
+  - npm run deploy -- --silent --tag --repo https://$GITHUB_TOKEN@github.com/honeypotio/techmap.git
