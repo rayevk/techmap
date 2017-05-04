@@ -36,7 +36,7 @@ class Pane extends Component {
     nextProps.globalStore.set({ markersFilter });
 
     // Reset scroll position.
-    this.wrapper.scrollTop = 0;
+    this.content.scrollTop = 0;
   }
 
   render() {
@@ -46,7 +46,13 @@ class Pane extends Component {
           this.wrapper = comp;
         }}
       >
-        <Content>{this.renderChildren()}</Content>
+        <Content
+          innerRef={comp => {
+            this.content = comp;
+          }}
+        >
+          {this.renderChildren()}
+        </Content>
       </Wrapper>
     );
   }
