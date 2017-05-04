@@ -12,7 +12,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "deploy": "npm run build && gh-pages -d $npm_package_config_distPath",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d $npm_package_config_distPath",
     "format": "prettier --single-quote --write '{src,public}/**/*.js'",
     "precommit": "lint-staged"
   },
