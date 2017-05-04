@@ -10,4 +10,4 @@ script:
 after_success:
   - git config --global user.email "travis-ci@localhost"
   - git config --global user.name "Travis-CI"
-  - npm run deploy -- --silent --tag --repo https://$GITHUB_TOKEN@github.com/honeypotio/techmap.git
+  - npm run deploy -- --silent --tag $TRAVIS_TAG --repo https://$GITHUB_TOKEN@github.com/$TRAVIS_REPO_SLUG.git
