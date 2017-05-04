@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, browserHistory } from 'react-router';
-
 import routes from './routes';
-import App from './containers/app';
+import App from './containers/App';
 
 // Import CSS Global Styles
 import './styles';

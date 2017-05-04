@@ -7,26 +7,26 @@ const routes = [
     path: '/london',
     getComponent(nextState, cb) {
       require.ensure([], require => {
-        cb(null, require('./containers/london').default);
+        cb(null, require('./containers/London').default);
       });
     },
     childRoutes: [
       {
         indexRoute: {
-          component: require('./components/industry-list').default
+          component: require('./components/IndustryList').default
         }
       },
       {
         path: 'industry/:industry',
-        component: require('./components/company-list').default
+        component: require('./components/CompanyList').default
       },
       {
         path: 'station/:station',
-        component: require('./components/company-list').default
+        component: require('./components/CompanyList').default
       },
       {
         path: 'company/:company',
-        component: require('./components/company-details').default
+        component: require('./components/CompanyDetails').default
       }
     ]
   },
@@ -36,7 +36,7 @@ const routes = [
     path: '*',
     getComponent(nextState, cb) {
       require.ensure([], require => {
-        cb(null, require('./containers/404').default);
+        cb(null, require('./containers/NotFound').default);
       });
     }
   }
