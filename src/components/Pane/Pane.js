@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Wrapper from './Wrapper';
 import Content from './Content';
 
-class Pane extends Component {
+class Pane extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
