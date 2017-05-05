@@ -27,6 +27,7 @@ const Wrapper = styled.div`
     cursor: pointer;
     fill: #f75850;
     stroke: #b3382c;
+    vector-effect: non-scaling-stroke;
   }
 `;
 
