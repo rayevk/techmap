@@ -85,13 +85,11 @@ class Map extends PureComponent {
   filterMarkers({ key = 'all', value = '' } = {}) {
     const visibleMarkers = this.markers.filter(markerFilters(key, value));
     const themeColor = {
-      fill: '#f75850',
-      stroke: '#b3382c'
+      fill: '#f75850'
     };
 
     if (key === 'industry') {
       themeColor.fill = getThemeColor(value);
-      themeColor.stroke = 'black';
     }
 
     if (key === 'company') {
@@ -99,7 +97,6 @@ class Map extends PureComponent {
         this.props.globalStore.companies.find(company => company.name === value)
           .industry
       );
-      themeColor.stroke = 'black';
     }
 
     this.markers.forEach(marker => {
@@ -109,7 +106,6 @@ class Map extends PureComponent {
         marker.el.style.display = 'block';
         marker.el.style.opacity = 1;
         marker.el.style.fill = themeColor.fill;
-        marker.el.style.stroke = themeColor.stroke;
       }
     });
   }

@@ -26,7 +26,6 @@ const Wrapper = styled.div`
     transition: all 0.13s cubic-bezier(0, 0, 0.3, 1);
     cursor: pointer;
     fill: #f75850;
-    stroke: #b3382c;
     vector-effect: non-scaling-stroke;
   }
 `;
