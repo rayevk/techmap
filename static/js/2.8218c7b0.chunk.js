@@ -1,2 +1,0 @@
-webpackJsonp([2],{179:function(e,t,l){"use strict";function n(e){return e&&e.__esModule?e:{default:e}}Object.defineProperty(t,"__esModule",{value:!0});var u=l(4),a=n(u),r=function(){return a.default.createElement("div",null,a.default.createElement("h1",null,"404"),a.default.createElement("p",null,"We couldn’t find this page."),a.default.createElement("p",null,"Back to the ",a.default.createElement("a",{href:"/"},"homepage"),"."))};t.default=r}});
-//# sourceMappingURL=2.8218c7b0.chunk.js.map
