@@ -30,6 +30,7 @@ const CompanyDetails = props => {
           <a
             href={`https://maps.google.com/?q=${encodeURIComponent(company.station)}%20station%20london`}
             target="_blank"
+            rel="noopener"
           >
             <svg
               fill="#3685d6"
@@ -54,6 +55,7 @@ const CompanyDetails = props => {
           <a
             href={`https://maps.google.com/?q=${encodeURIComponent(company.adress)}`}
             target="_blank"
+            rel="noopener"
           >
             <svg
               width="30"
