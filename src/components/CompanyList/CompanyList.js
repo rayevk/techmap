@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import PaneHeader from '../PaneHeader';
 import Item from './Item';
-import { applyFilters } from '../../utils';
+import { applyFilters, getThemeColor } from '../../utils';
 
 const CompanyList = props => {
   const { companies } = props.globalStore;
@@ -12,11 +12,11 @@ const CompanyList = props => {
     .filter(company => applyFilters(company, filters))
     .map((company, idx) => (
       <Item
-        to={`/london/company/${encodeURIComponent(company.name)}`}
+        href={`/london/company/${encodeURIComponent(company.name)}`}
         key={idx}
-      >
-        {company.name}
-      </Item>
+        text={company.name}
+        themeColor={getThemeColor(company.industry)}
+      />
     ));
 
   return (
