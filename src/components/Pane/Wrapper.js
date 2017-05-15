@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 import { media } from '../../styles/utils';
 
+const spacing = '30';
+
 const Wrapper = styled.div`
   background-color: white;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-  border-top: 1px solid #e2e8f0;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
   width: 100%;
   height: 45%;
   position: absolute;
@@ -12,11 +13,12 @@ const Wrapper = styled.div`
   bottom: 0;
 
   ${media.large`
-    box-shadow: 0 0 60px rgba(0, 0, 0, 0.2)
-    border: 1px solid #e2e8f0;
+    box-shadow: 0 0 60px rgba(0, 0, 0, 0.3)
     width: 360px;
-    height: calc(100% - 80px);
-    margin: 40px;
+    height: calc(100% - ${spacing * 2}px);
+    top: ${spacing}px;
+    bottom: ${spacing}px;
+    left: ${spacing}px;
   `}
 `;
 

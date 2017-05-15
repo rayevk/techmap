@@ -7,12 +7,20 @@ const StyledLink = styled.a`
   pointer-events: none;
 
   ${media.large`
+    background: radial-gradient(
+      ellipse closest-side,
+      rgba(255, 255, 255, 0.9) 0%,
+      rgba(255, 255, 255, 0.5) 50%,
+      rgba(255, 255, 255, 0.2) 80%,
+      rgba(255, 255, 255, 0) 100%
+    );
+
     display: inline-block;
     pointer-events: auto;
     position: absolute;
     z-index: 1;
-    right: 8px;
-    bottom: 8px;
+    right: 30px;
+    bottom: 10px;
   `}
 `;
 

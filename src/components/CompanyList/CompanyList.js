@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import PaneHeader from '../PaneHeader';
+import PaneSubHeader from '../PaneSubHeader';
 import Item from './Item';
 import { applyFilters, getThemeColor } from '../../utils';
 
@@ -21,7 +21,7 @@ const CompanyList = props => {
 
   return (
     <div>
-      <PaneHeader
+      <PaneSubHeader
         title={paneTitle}
         meta={`${companyItems.length} companies`}
         backButton="true"

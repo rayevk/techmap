@@ -5,11 +5,9 @@ import Meta from './Meta';
 import Action from './Action';
 import BackButton from '../BackButton';
 
-const PaneHeader = ({ title, meta, backButton, backTo }) => (
+const PaneSubHeader = ({ title, meta, backButton, backTo }) => (
   <Wrapper>
-    <Action left>
-      {backButton && <BackButton to={backTo} />}
-    </Action>
+    {backButton && <Action left><BackButton to={backTo} /></Action>}
     <div>
       <Title>{title}</Title>
       {meta && <Meta>{meta}</Meta>}
@@ -17,4 +15,4 @@ const PaneHeader = ({ title, meta, backButton, backTo }) => (
   </Wrapper>
 );
 
-export default PaneHeader;
+export default PaneSubHeader;

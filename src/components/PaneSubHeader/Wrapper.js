@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { media } from '../../styles/utils';
 
 const Wrapper = styled.div`
   background-color: white;
@@ -10,11 +9,8 @@ const Wrapper = styled.div`
   top: 0;
   width: 100%;
   height: 60px;
-  padding: 20px;
-
-  ${media.large`
-    height: 90px;
-  `}
+  padding-left: 20px;
+  padding-right: 20px;
 `;
 
 export default Wrapper;

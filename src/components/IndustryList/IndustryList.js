@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import groupBy from 'lodash.groupby';
 import { getThemeColor } from '../../utils';
-import PaneHeader from '../PaneHeader';
+import PaneSubHeader from '../PaneSubHeader';
 import Item from './Item';
 
 const IndustryList = props => {
@@ -24,7 +24,7 @@ const IndustryList = props => {
 
   return (
     <div>
-      <PaneHeader
+      <PaneSubHeader
         title="Industries and Companies"
         meta={`${companies.length} companies`}
       />

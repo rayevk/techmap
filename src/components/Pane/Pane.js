@@ -1,6 +1,8 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import Mascot from '../Mascot';
 import Wrapper from './Wrapper';
+import Header from './Header';
 import Content from './Content';
 
 class Pane extends PureComponent {
@@ -50,6 +52,13 @@ class Pane extends PureComponent {
             this.content = comp;
           }}
         >
+          <Header>
+            <Mascot width="38.5" height="64" />
+            <div>
+              <h2>Honeypot’s</h2>
+              <h1>{this.props.title}</h1>
+            </div>
+          </Header>
           {this.renderChildren()}
         </Content>
       </Wrapper>
@@ -59,7 +68,8 @@ class Pane extends PureComponent {
 
 Pane.propTypes = {
   globalStore: PropTypes.object,
-  children: PropTypes.node
+  children: PropTypes.node,
+  title: PropTypes.string
 };
 
 export default Pane;

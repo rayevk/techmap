@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { getThemeColor } from '../../utils';
 import Content from './Content';
-import PaneHeader from '../PaneHeader';
+import PaneSubHeader from '../PaneSubHeader';
 import Tag from '../Tag';
 
 const CompanyDetails = props => {
@@ -15,7 +15,7 @@ const CompanyDetails = props => {
 
   return (
     <div>
-      <PaneHeader
+      <PaneSubHeader
         title={company.name}
         meta={company.industry}
         backButton="true"
@@ -74,7 +74,11 @@ const CompanyDetails = props => {
           </a>
         </p>
         <p>
-          <a href="mailto:hello@honeypot.io">
+          <a
+            href="https://github.com/honeypotio/techmap"
+            target="_blank"
+            rel="noopener"
+          >
             <svg
               fill="currentColor"
               height="18"

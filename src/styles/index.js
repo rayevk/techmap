@@ -10,6 +10,7 @@ const globalStyles = injectGlobal`
     box-sizing: border-box;
     color: #1f2228;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 16px;
 		margin: 0;
     overflow-y: hidden;
 	}

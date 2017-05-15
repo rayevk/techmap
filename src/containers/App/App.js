@@ -9,9 +9,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-
-// TODO
-// import Toolbar from '../../components/Toolbar';
+import MainNav from '../../components/MainNav';
 
 const App = props => (
   <div style={{ height: '100%' }}>
@@ -20,19 +18,12 @@ const App = props => (
       defaultTitle="Honeypot’s Tech Map"
       meta={[
         {
-          name: 'description',
-          content: 'Honeypot’s Tech Maps'
-        },
-        {
-          name: 'twitter:card',
-          content: 'summary'
-        },
-        {
           name: 'twitter:site',
           content: '@honeypotio'
         }
       ]}
     />
+    <MainNav />
     {props.children}
   </div>
 );

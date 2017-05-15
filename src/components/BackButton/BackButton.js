@@ -7,12 +7,14 @@ import Icon from '../Icon';
 const StyledButton = styled.button`
   background-color: transparent;
   border: 0;
+  color: #1f2228;
   cursor: pointer;
   display: flex;
   outline: 0;
   padding: 0;
 `;
 const StyledLink = styled(Link)`
+  color: #1f2228;
   display: flex;
 `;
 
