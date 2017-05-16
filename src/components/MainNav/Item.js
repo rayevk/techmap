@@ -5,8 +5,8 @@ const Item = styled.a`
   display: flex;
   align-items: center;
   font-size: 14px;
-  font-weight: 500;
-  padding: 15px 10px;
+  font-weight: 400;
+  padding: 15px 30px;
   text-decoration: none;
 
   &:hover {
@@ -14,7 +14,7 @@ const Item = styled.a`
   }
 
   > svg {
-    margin-right: 30px;
+    margin-right: 20px;
   }
 `;
 
