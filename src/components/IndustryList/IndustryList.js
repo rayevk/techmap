@@ -15,7 +15,7 @@ const IndustryList = props => {
       <Item
         href={`/london/industry/${encodeURIComponent(industry)}`}
         text={industry}
-        meta={`(${companies.length})`}
+        meta={`Companies: ${companies.length}`}
         themeColor={themeColor}
         key={idx}
       />
