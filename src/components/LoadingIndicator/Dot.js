@@ -13,7 +13,7 @@ const fx = keyframes`
 const Dot = styled.div`
   width: 10px;
   height: 10px;
-  border: 2px solid #093e7d;
+  border: 2px solid #104986;
   border-radius: 50%;
   margin: 0 5px;
   transform: scale(0);

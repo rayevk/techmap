@@ -4,7 +4,7 @@ import { media } from '../../styles/utils';
 const FloatingActionButton = styled.div`
     border-radius: 28px;
     box-shadow: 0 4px 11px rgba(0, 0, 0, .3);
-    background-color: #093e7d;
+    background-color: #104986;
     color: white;
     cursor: pointer;
     width: 56px;
