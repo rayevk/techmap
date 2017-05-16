@@ -4,6 +4,14 @@ import PaneSubHeader from '../PaneSubHeader';
 import Item from './Item';
 import { applyFilters, getThemeColor } from '../../utils';
 
+function getItemMetaData(company, key) {
+  const data = {
+    industry: `Station: ${company.station}`,
+    station: `Industry: ${company.industry}`
+  };
+  return data[key] || '';
+}
+
 const CompanyList = props => {
   const { companies } = props.globalStore;
   const filters = props.params;
@@ -15,6 +23,7 @@ const CompanyList = props => {
         href={`/london/company/${encodeURIComponent(company.name)}`}
         key={idx}
         text={company.name}
+        meta={getItemMetaData(company, Object.keys(filters)[0])}
         themeColor={getThemeColor(company.industry)}
       />
     ));
