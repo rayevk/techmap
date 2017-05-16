@@ -13,6 +13,9 @@ const Content = styled.div`
   will-change: transform;
   transform: translateX(${props => (props.visible ? '0' : '110%')});
   transition: transform 0.13s cubic-bezier(0, 0, 0.3, 1);
+
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 `;
 
 export default Content;
