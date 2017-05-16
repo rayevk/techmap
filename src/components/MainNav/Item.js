@@ -4,6 +4,7 @@ const Item = styled.a`
   color: #1f2228;
   display: flex;
   align-items: center;
+  flex-shrink: 0
   font-size: 14px;
   font-weight: 400;
   padding: 15px 30px;

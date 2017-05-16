@@ -16,6 +16,9 @@ const Content = styled.div`
 
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
+
+  display: flex;
+  flex-direction: column;
 `;
 
 export default Content;
