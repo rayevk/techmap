@@ -14,7 +14,7 @@ const OverviewList = () => (
         Use the map to discover London companies by tech stack and location.
       </p>
       <p>
-        Want to
+        The map is a work in progress. To edit or update a company,
         {' '}
         <a
           href="https://github.com/honeypotio/techmap"
@@ -24,16 +24,15 @@ const OverviewList = () => (
           contribute
         </a>
         {' '}
-        to the project or
+        here! Want to learn more? Read our
         {' '}
         <a
           href="https://honeypotio.github.io/research/pages/london-techmap.html"
           target="_blank"
           rel="noopener"
         >
-          learn more
-        </a>
-        ?
+          research report
+        </a>.
       </p>
     </Footer>
   </Wrapper>
