@@ -1,6 +1,5 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import Dialog from '../../components/Dialog';
 import Viewport from '../../components/Viewport';
 import Store from '../../components/Store';
 import Map from '../../components/Map';
@@ -37,36 +36,6 @@ const London = props => (
         }
       ]}
     />
-    <Dialog name="intro" open showOnce>
-      <h1>Welcome to Honeypot’s<br />London Tech Map</h1>
-      <p>
-        Use the map to discover London companies by tech stack and location.
-      </p>
-      <br />
-      <br />
-      <p>
-        Want to
-        {' '}
-        <a
-          href="https://github.com/honeypotio/techmap"
-          target="_blank"
-          rel="noopener"
-        >
-          contribute
-        </a>
-        {' '}
-        to the project or
-        {' '}
-        <a
-          href="https://honeypotio.github.io/research/pages/london-techmap.html"
-          target="_blank"
-          rel="noopener"
-        >
-          learn more
-        </a>
-        ?
-      </p>
-    </Dialog>
     <Store src={`${process.env.PUBLIC_URL}/data/london.json`}>
       <Map svgurl={`${process.env.PUBLIC_URL}/assets/maps/london.svg`} />
       <Pane title="London Tech Map">
