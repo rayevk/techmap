@@ -45,6 +45,22 @@
         }
       })();
     </script>
+    <script>
+      var loadJS = function(a,b){"use strict";var c=document.getElementsByTagName("script")[0],d=document.createElement("script");return d.src=a,d.async=!0,c.parentNode.insertBefore(d,c),b&&"function"==typeof b&&(d.onload=b),d};
+
+
+      // Polyfill click delays on iOS (pan zoom)
+      if (/(iPhone|iPad);/.test(navigator.userAgent)) {
+        loadJS('https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js', function() {
+          FastClick.attach(document.body);
+        });
+      }
+
+      // Let's register our serviceworker
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('%PUBLIC_URL%/sw.js');
+      }
+    </script>
   </head>
   <body>
     <div id="root" style="height:100%;"></div>
@@ -59,18 +75,7 @@
       To create a production bundle, use `npm run build`.
     -->
     <script>
-      var loadJS = function(a,b){"use strict";var c=document.getElementsByTagName("script")[0],d=document.createElement("script");return d.src=a,d.async=!0,c.parentNode.insertBefore(d,c),b&&"function"==typeof b&&(d.onload=b),d};
 
-      // Polyfill click delays on iOS (pan zoom)
-      if (/(iPhone|iPad);/.test(navigator.userAgent)) {
-        loadJS('https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js', function() {
-          FastClick.attach(document.body);
-        });
-      }
-
-      // Let's register our serviceworker
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('%PUBLIC_URL%/sw.js');
       }
     </script>
   </body>
