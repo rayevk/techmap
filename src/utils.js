@@ -6,8 +6,15 @@ function uniq(a) {
 
 function applyFilters(obj, filters) {
   for (let key in filters) {
-    if (obj[key] === undefined || obj[key] !== decodeURIComponent(filters[key]))
-      return false;
+    if (Array.isArray(obj[key])) {
+      return obj[key].includes(decodeURIComponent(filters[key]));
+    } else {
+      if (
+        obj[key] === undefined ||
+        obj[key] !== decodeURIComponent(filters[key])
+      )
+        return false;
+    }
   }
   return true;
 }

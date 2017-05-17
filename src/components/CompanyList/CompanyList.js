@@ -7,7 +7,8 @@ import { applyFilters, getThemeColor } from '../../utils';
 function getItemMetaData(company, key) {
   const data = {
     industry: `Station: ${company.station}`,
-    station: `Industry: ${company.industry}`
+    station: `Industry: ${company.industry}`,
+    technology: `Industry: ${company.industry}`
   };
   return data[key] || '';
 }
@@ -34,7 +35,6 @@ const CompanyList = props => {
         title={paneTitle}
         meta={`${companyItems.length} companies`}
         backButton="true"
-        backTo="/london"
       />
       {companyItems}
     </div>

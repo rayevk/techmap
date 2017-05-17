@@ -13,8 +13,20 @@ const routes = [
     childRoutes: [
       {
         indexRoute: {
-          component: require('./components/IndustryList').default
+          component: require('./components/OverviewList').default
         }
+      },
+      {
+        path: 'industries',
+        component: require('./components/IndustryList').default
+      },
+      {
+        path: 'technologies',
+        component: require('./components/TechnologyList').default
+      },
+      {
+        path: 'technology/:technology',
+        component: require('./components/CompanyList').default
       },
       {
         path: 'industry/:industry',

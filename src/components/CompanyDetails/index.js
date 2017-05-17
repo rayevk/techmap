@@ -22,8 +22,8 @@ const CompanyDetails = props => {
       />
       <Content>
         <p>
-          {company.techStack.map((techStack, idx) => (
-            <Tag key={idx}>{techStack}</Tag>
+          {company.technology.map((technology, idx) => (
+            <Tag key={idx}>{technology}</Tag>
           ))}
         </p>
         <p>

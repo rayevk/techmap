@@ -27,6 +27,8 @@ const IndustryList = props => {
       <PaneSubHeader
         title="Industries and Companies"
         meta={`${companies.length} companies`}
+        backButton="true"
+        backTo="/london"
       />
       {industryItems}
     </div>

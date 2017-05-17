@@ -71,7 +71,12 @@ class Map extends PureComponent {
         companies: companiesByStation[el.dataset.station].map(
           company => company.name
         ),
-        companiesTotal: companiesByStation[el.dataset.station].length
+        companiesTotal: companiesByStation[el.dataset.station].length,
+        technologies: uniq(
+          companiesByStation[el.dataset.station]
+            .map(company => company.technology)
+            .reduce((acc, cur) => acc.concat(cur), [])
+        )
       }));
 
     markers.forEach(marker => {
@@ -101,7 +106,7 @@ class Map extends PureComponent {
 
     this.markers.forEach(marker => {
       if (!visibleMarkers.includes(marker)) {
-        marker.el.style.opacity = 0.6;
+        marker.el.style.opacity = 0.4;
       } else {
         marker.el.style.display = 'block';
         marker.el.style.opacity = 1;
@@ -145,6 +150,7 @@ function markerFilters(key, value) {
   const filters = {
     industry: marker => marker.industries.includes(value),
     company: marker => marker.companies.includes(value),
+    technology: marker => marker.technologies.includes(value),
     station: marker => marker.station === value,
     all: marker => marker
   };
