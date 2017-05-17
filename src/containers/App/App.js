@@ -12,7 +12,7 @@ import Helmet from 'react-helmet';
 import MainNav from '../../components/MainNav';
 
 const App = props => (
-  <div style={{ height: '100%' }}>
+  <div style={{ height: '100%', overflow: 'hidden', position: 'relative' }}>
     <Helmet
       titleTemplate="Honeypot’s %s Tech Map"
       defaultTitle="Honeypot’s Tech Map"
