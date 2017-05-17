@@ -36,10 +36,12 @@
       // Single-Page App Hack For GitHub Pages
       // https://github.com/csuwildcat/sghpa
       (function(){
-        var redirect = sessionStorage.redirect;
-        delete sessionStorage.redirect;
-        if (redirect && redirect != location.href) {
-          history.replaceState(null, null, redirect);
+        if (window.sessionStorage) {
+          var redirect = sessionStorage.redirect;
+          delete sessionStorage.redirect;
+          if (redirect && redirect != location.href) {
+            history.replaceState(null, null, redirect);
+          }
         }
       })();
     </script>
