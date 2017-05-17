@@ -106,10 +106,11 @@ class Map extends PureComponent {
 
     this.markers.forEach(marker => {
       if (!visibleMarkers.includes(marker)) {
-        marker.el.style.opacity = 0.4;
+        marker.el.style.stroke = 'rgba(0, 0, 0, 0.5)';
+        marker.el.style.fill = 'rgba(132, 132, 132, 0.3)';
       } else {
         marker.el.style.display = 'block';
-        marker.el.style.opacity = 1;
+        marker.el.style.stroke = '#000000';
         marker.el.style.fill = themeColor.fill;
       }
     });
