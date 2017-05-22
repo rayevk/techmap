@@ -19,7 +19,7 @@ const OverviewList = () => (
         <a
           href="https://github.com/honeypotio/techmap"
           target="_blank"
-          rel="noopener"
+          rel="noopener noreferrer"
         >
           here
         </a>
@@ -28,7 +28,7 @@ const OverviewList = () => (
         <a
           href="https://honeypotio.github.io/research/pages/london-techmap.html"
           target="_blank"
-          rel="noopener"
+          rel="noopener noreferrer"
         >
           research report
         </a>.

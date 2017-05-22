@@ -34,7 +34,7 @@ class MainNav extends Component {
               <a
                 href="https://honeypotio.github.io/research/pages/london-techmap.html"
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
               >
                 research report
               </a>
@@ -43,7 +43,7 @@ class MainNav extends Component {
               <a
                 href="https://github.com/honeypotio/techmap"
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
               >
                 open source
               </a>
@@ -53,25 +53,29 @@ class MainNav extends Component {
           <Item
             href="https://github.com/honeypotio/techmap"
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
           >
             <Icon name="code" fill="#104986" /> Contribute
           </Item>
           <Item
             href="https://honeypotio.github.io/research/pages/london-techmap.html"
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
           >
             <Icon name="assessment" fill="#104986" /> Research Report
           </Item>
-          <Item href="https://www.honeypot.io" target="_blank" rel="noopener">
+          <Item
+            href="https://www.honeypot.io"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Icon name="info" fill="#104986" /> About
           </Item>
           <Content>
             <Button
               href="https://www.honeypot.io/lp/join?utm_source=techmap"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
             >
               Join Honeypot
             </Button>
