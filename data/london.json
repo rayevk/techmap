@@ -560,7 +560,7 @@
 {
   "id": "echobox",
   "name": "Echobox",
-  "industry": "MarTech",
+  "industry": "AI",
   "station": "Bank",
   "adress": "107 Cheapside,\n London EC2V 6DN,",
   "technology": [
@@ -5756,7 +5756,7 @@
   "station": "Moorgate",
   "adress": "20 Ropemaker Street,\n London EC2Y 9AR,",
   "technology": [
-    "Python",
+    "Java",
     "Objective-C",
     "React"
   ]
@@ -5961,9 +5961,7 @@
   "station": "Notting Hill Gate",
   "adress": "9th Floor, Newcombe House, 45 Notting Hill Gate,\n London W11 3LQ,",
   "technology": [
-    "Python",
-    "C#",
-    "Ruby"
+    "Python"
   ]
 },
 {
@@ -9581,7 +9579,7 @@
   "id": "farmdrop",
   "name": "Farmdrop",
   "industry": "Logistics, Delivery & On-Demand Services",
-  "station": "White City",
+  "station": "Bermondsey",
   "adress": "56 Wood Lane\n Ugli Campus\n London W12 7SB,",
   "technology": [
     "Ruby",
