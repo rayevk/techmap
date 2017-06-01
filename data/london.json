@@ -8848,10 +8848,12 @@
   "id": "little-data",
   "name": "LittleData",
   "industry": "MarTech",
-  "station": "Tottenham Court Road",
-  "adress": "Bedford Square, London",
+  "station": "Paddington",
+  "adress": "WeWork, 2 Eastbourne Terrace, London W2",
   "technology": [
-    "Node.js"
+    "Node.js",
+    "MongoDB",
+    "Meteor"
   ]
 },
 {
