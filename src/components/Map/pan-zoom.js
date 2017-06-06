@@ -37,7 +37,7 @@ class PanZoom {
     e.preventDefault();
 
     const boundingRect = this._target.getBoundingClientRect();
-    let delta = e.deltaY;
+    let delta = e.deltaY * -1;
 
     if (e.deltaMode === 1) {
       // 1 is "lines", 0 is "pixels"
