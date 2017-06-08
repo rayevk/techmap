@@ -9722,8 +9722,8 @@
     "Node.js",
     "React",
     "Redux",
-    "Mongo",
-    "Postgres"
+    "MongoDB",
+    "PostgreSQL"
   ]
 }
 ]
